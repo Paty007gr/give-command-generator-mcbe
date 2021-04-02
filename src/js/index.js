@@ -14,12 +14,17 @@ var app = new Vue({
         genCommand: function (item, amount, data, keepOnDeath, lockInInventory, lockInSlot, selector) {
             let components = {}
 
-            if (keepOnDeath) {components.keep_on_death = {}; JSON.stringify(components)}
-            else if (lockInInventory) {components.item_lock = {"mode": "lock_in_inventory"}; JSON.stringify(components)}
-            else if (lockInSlot) {components.item_lock = {"mode": "lock_in_slot"}; JSON.stringify(components)}
-            else {components=""};
+            if (keepOnDeath) {components.keep_on_death = {}}
+            if (lockInInventory) {components.item_lock = {"mode": "lock_in_inventory"}}
+            if (lockInSlot) {components.item_lock = {"mode": "lock_in_slot"}}
+            if (keepOnDeath == false && lockInInventory == false && lockInSlot == false) {
+                components=""
+                this.command = `give ${selector} ${item} ${amount} ${data} ${components}`
+            } else {
+                this.command = `give ${selector} ${item} ${amount} ${data} ${JSON.stringify(components)}`
+            };
 
-            this.command = `give ${selector} ${item} ${amount} ${data} ${components}`
+            
         }
     }
 });
