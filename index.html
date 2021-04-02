@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Give command generator</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <link rel="stylesheet" type="text/css" href="src/css/style.css">
+        <link rel="shortcut icon" type="image/png" href="icon.png"/>
+    </head>
+    <body>
+
+        <div id="app">
+            <input v-model="selector" placeholder="selector">
+            <input v-model="item" placeholder="item">
+            <input v-model="amount" placeholder="amount">
+            <input v-model="data" placeholder="data">
+
+            <input type="checkbox" id="keepOnDeath" value="keepOnDeath" v-model="keepOnDeath">
+            <label for="keepOnDeath">Keep on Death</label>
+
+            <input :disabled="lockInSlot" v-if="" type="checkbox" id="lockInInventory" value="lockInInventory" v-model="lockInInventory">
+            <label for="john">Lock in inventory</label>
+        
+            <input :disabled="lockInInventory" type="checkbox" id="lockInSlot" value="lockInSlot" v-model="lockInSlot">
+            <label for="lockInSlot">Lock in slot</label>
+
+            <button @click="genCommand(item, amount, data, keepOnDeath, lockInInventory, lockInSlot, selector)">Generate command</button>
+
+            <p>Give command: {{ command }}</p>
+        </div>
+
+        <script src="src/js/index.js"></script>
+    </body>
+</html>
