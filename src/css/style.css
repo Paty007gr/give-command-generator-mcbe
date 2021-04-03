@@ -1,12 +1,13 @@
 body {
     font-family: tahoma;
-    color:#282828;
+    color:#eee4e4;
+    background-color: #242424;
   }
   
   button {
     border: #000000;
-    background-color: #1E95EA;
-    color: white;
+    background-color: #0075FF;
+    color: rgb(250, 227, 226);
     height: 40px;
     width: 100px;
     font-size: 14px;
@@ -22,4 +23,20 @@ body {
   textarea {
     width: 50%;
     height: 60px;
+  }
+
+  .title {
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+  }
+
+  .options {
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
   }
