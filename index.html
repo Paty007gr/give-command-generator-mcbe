@@ -4,6 +4,7 @@
         <title>Give command generator</title>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="Description" content="A generator for the bedrock give command that supports item locking and keep on death components">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         <link rel="stylesheet" type="text/css" href="src/css/style.css">
@@ -22,7 +23,7 @@
                 <input type="checkbox" id="keepOnDeath" value="keepOnDeath" v-model="keepOnDeath">
                 <label for="keepOnDeath">Keep on Death</label>
 
-                <input :disabled="lockInSlot" v-if="" type="checkbox" id="lockInInventory" value="lockInInventory" v-model="lockInInventory">
+                <input :disabled="lockInSlot" type="checkbox" id="lockInInventory" value="lockInInventory" v-model="lockInInventory">
                 <label for="john">Lock in inventory</label>
             
                 <input :disabled="lockInInventory" type="checkbox" id="lockInSlot" value="lockInSlot" v-model="lockInSlot">
